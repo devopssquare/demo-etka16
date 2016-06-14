@@ -45,7 +45,7 @@ file { '/var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion':
   group    => 'jenkins',
   mode     => 0644,
   # TODO: Check how we can dynamically replace this with the current Jenkins version
-  content  => "2.8",
+  content  => "2.9",
   require  => Class['jenkins'],
   replace  => 'no',
 }
