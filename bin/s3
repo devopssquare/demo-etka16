@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eu
+
+/vagrant/modules/data/scripts/init.sh
+/vagrant/modules/docker/scripts/init.sh
