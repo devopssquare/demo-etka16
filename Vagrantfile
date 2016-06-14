@@ -3,7 +3,7 @@
 
 composite = ENV['VAGRANT_COMPOSITE'] || "current"
 
-name = ENV['VAGRANT_NAME'] || "etka16-devel"
+name = ENV['VAGRANT_NAME'] || "etka16-demo"
 # Memory settings for "minimal" environment
 memory = ENV['VAGRANT_MEMORY'] || 2048
 ip_unique = ENV['VAGRANT_IP_UNIQUE'] || "11"
