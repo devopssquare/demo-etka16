@@ -33,9 +33,13 @@ $plugins = [
   'scm-api',
   'script-security',
   'ssh-credentials',
-  'structs',
+#  'structs',
   'token-macro'
 ]
+
+jenkins::plugin { 'structs.hpi':
+  source   => 'http://mirrors.jenkins-ci.org/plugins/structs/latest/structs.hpi'
+}
 
 jenkins::plugin { $plugins : }
 
