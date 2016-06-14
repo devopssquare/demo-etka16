@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eu
+
+/vagrant/modules/jenkins-settings-nexus-localhost/scripts/init.sh
+/vagrant/modules/it-jenkins-nexus-minimal/scripts/init.sh
