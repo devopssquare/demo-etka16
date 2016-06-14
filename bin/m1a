@@ -2,4 +2,4 @@
 
 set -eu
 
-git merge --ff -m'Merged stage1a'
+git merge --ff -m'Merged stage1a' stage1a
