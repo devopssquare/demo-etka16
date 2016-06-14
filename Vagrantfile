@@ -6,7 +6,7 @@ composite = ENV['VAGRANT_COMPOSITE'] || "current"
 name = ENV['VAGRANT_NAME'] || "etka16-devel"
 # Memory settings for "minimal" environment
 memory = ENV['VAGRANT_MEMORY'] || 2048
-ip_unique = ENV['VAGRANT_IP_UNIQUE'] || "12"
+ip_unique = ENV['VAGRANT_IP_UNIQUE'] || "11"
 port_unique = ENV['VAGRANT_PORT_UNIQUE'] || "#{ip_unique}"
 
 Vagrant.configure("2") do |boxname|
