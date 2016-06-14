@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+git merge --ff -m'Merged stage5' stage5
