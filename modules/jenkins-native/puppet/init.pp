@@ -33,22 +33,26 @@ $plugins = [
   'scm-api',
   'script-security',
   'ssh-credentials',
-  'structs',
+#  'structs',
   'token-macro'
 ]
 
+jenkins::plugin { 'structs.hpi':
+  source   => 'http://mirrors.jenkins-ci.org/plugins/structs/latest/structs.hpi'
+}
+
 jenkins::plugin { $plugins : }
 
-## This seems to ensure that the initial "unlock" wizard is skipped!
-#file { '/var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion':
-#  owner    => 'jenkins',
-#  group    => 'jenkins',
-#  mode     => 0644,
-#  # TODO: Check how we can dynamically replace this with the current Jenkins version
-#  content  => "2.8",
-#  require  => Class['jenkins'],
-#  replace  => 'no',
-#}
+# This seems to ensure that the initial "unlock" wizard is skipped!
+file { '/var/lib/jenkins/jenkins.install.InstallUtil.lastExecVersion':
+  owner    => 'jenkins',
+  group    => 'jenkins',
+  mode     => 0644,
+  # TODO: Check how we can dynamically replace this with the current Jenkins version
+  content  => "2.9",
+  require  => Class['jenkins'],
+  replace  => 'no',
+}
 
 # Add "admin" user with password "admin"
 file { '/var/lib/jenkins/users/admin/config.xml':
