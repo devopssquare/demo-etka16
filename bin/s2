@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+/vagrant/modules/it-jenkins-minimal/scripts/init.sh
