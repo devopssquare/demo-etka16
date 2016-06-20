@@ -20,7 +20,11 @@ test -x $sudo || sudo=
 
 $sudo apt-get update
 $sudo apt-get install -qq puppet
-$sudo apt-get update
+# Fix for https://stackoverflow.com/questions/37892435/cant-install-puppet-modules-302-found-win-8-1-64-running-ubuntu-trusty-64-i
+if grep -q module_repository= /etc/puppet/puppet.conf
+   then echo "Current Puppet module repository is already set!"
+   else $sudo sed -i -e '/\[main\]/a module_repository=https://forge.puppet.com' /etc/puppet/puppet.conf
+fi
 
 test -r /etc/puppet/modules/etckeeper || $sudo puppet module install thomasvandoren-etckeeper
 test -r /etc/puppet/modules/stdlib || $sudo puppet module install puppetlabs-stdlib
