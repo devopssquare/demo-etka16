@@ -12,6 +12,7 @@ package { $packages :
 $plugins = [
   'ansicolor',
   'build-pipeline-plugin',
+  'conditional-buildstep',
   'credentials',
   'disk-usage',
   'envinject',
@@ -30,11 +31,14 @@ $plugins = [
   'monitoring',
   'parameterized-trigger',
   'plain-credentials',
+  'run-condition',
   'scm-api',
   'script-security',
   'ssh-credentials',
 #  'structs',
-  'token-macro'
+  'token-macro',
+  'workflow-scm-step',
+  'workflow-step-api',
 ]
 
 jenkins::plugin { 'structs.hpi':
